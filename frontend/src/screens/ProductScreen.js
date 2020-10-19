@@ -13,7 +13,7 @@ const Productcreen = ({match}) => {
     }
 
     fetchProduct()
-  },[])
+  },[match])
 
 return (
   <>
