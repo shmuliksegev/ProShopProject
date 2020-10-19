@@ -4,7 +4,7 @@
   "description": "MERN shopping cart app",
   "main": "server.js",
   "scripts": {
-    "start":"node backend/server"
+    "start": "node backend/server"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shmuliksegev/ProShopProject#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "express": "^4.17.1"
   }
 }
