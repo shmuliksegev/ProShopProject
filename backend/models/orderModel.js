@@ -30,10 +30,10 @@ const ordrSchema = mongoose.Schema({
     },
     //get information from paypal after the buying
     paymentResult:{
-       id:{type:string},
-       istatus:{type:string},
-       update_time:{type:string},
-       email_address:{type:string},
+       id:{type:String},
+       istatus:{type:String},
+       update_time:{type:String},
+       email_address:{type:String},
     },
     taxPrice:{
         type:Number,
@@ -51,7 +51,7 @@ const ordrSchema = mongoose.Schema({
         default:0.0
     },
     isPaid:{
-        type:boolean,
+        type:Boolean,
         required:true,
         default:false
     },

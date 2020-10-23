@@ -33,14 +33,14 @@ const productSchema = mongoose.Schema({
         required:true
     },
     category:{
-        type:boolean,
+        type:String,
         required:true,
     },
     description:{
         type:String,
         required:true,
     },
-    reviews:[revieSchema],
+    reviews:[reviewSchema],
     //average rating of rating of reviews schema from all users
     rating:{
         type:Number,

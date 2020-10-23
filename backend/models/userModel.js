@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema({
         required:true
     },
     isAdmin:{
-        type:boolean,
+        type:Boolean,
         required:true,
         default:false
         //this for that when a users registers they not an admin 
