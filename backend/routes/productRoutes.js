@@ -9,6 +9,7 @@ const router = express.Router()
 //@access Public
 router.get('/',expressAsyncHandler(async (req,res) => {
     const products = await Product.find({})
+   
     res.json(products)
 }))
 //@desc Fetch single product
