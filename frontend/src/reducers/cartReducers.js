@@ -7,16 +7,17 @@ export const cartReducer = (state= {cartItems:[]},action) => {
 
             const existItem = state.cartItems.find(x => x.product === item.product)
 
-
             if(existItem){
                 return {
+                    //מה שזה עושה זה מחליף את המוצר הישן בחדש כי יכול להיות שהכמות השתנתה 
                     ...state,
-                    cartItem:state.cartItems.map(x => x.product === existItem.product ? item : x)
+                    cartItems:state.cartItems.map(x => x.product === existItem.product ? item : x)
                 }
             } else {
+               
                 return {
                     ...state,
-                    cartItem:[...state.cartItems,item]
+                    cartItems:[...state.cartItems,item]
                 }
             }
             default :
