@@ -30,7 +30,8 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-//Middleware of mongos not of express
+//Middleware of mongos not of express ,before the save do that.
+// and it's run aoutomatic we dont need to di imprt to this.
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     next();

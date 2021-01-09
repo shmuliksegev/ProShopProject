@@ -8,35 +8,34 @@ import FormContainer from '../components/FormContainer';
 import { login } from '../actions/userAction';
 // import e from 'express';
 
-const LoginScreen = ({location,history}) => {
+const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const userLogin = useSelector(state => state.userLogin)
-  const {loading,error,userInfo} = userLogin
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
+  
 
   useEffect(() => {
-    if(userInfo){
-      history.push(redirect)
-
+    if (userInfo) {
+      history.push(redirect);
     }
-  },[history,userInfo,redirect])
-
+  }, [history, userInfo, redirect]);
 
   const submitHandler = (e) => {
-    e.preventDefault()
-    dispatch(login(email,password))
-  }
+    e.preventDefault();
+    dispatch(login(email, password));
+  };
 
   return (
     <FormContainer>
       <h1>Sign In</h1>
-      {error && <Message var='danger'>{error}</Message>}
-      {loading && <Loader/>}
+      {error && <Message variant="danger">{error}</Message>}
+      {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>

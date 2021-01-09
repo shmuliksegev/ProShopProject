@@ -6,10 +6,10 @@ import {
   USER_LOGOUT,
 } from '../constants/userConstants';
 
-export const login = (email, password) => async (dispatch) => {
+const login = (email, password) => async (dispatch) => {
   try {
     dispatch({
-      type: USER_LOGOUT,
+      type: USER_LOGIN_REQUEST,
     });
     const config = {
       headers: {
@@ -33,3 +33,10 @@ export const login = (email, password) => async (dispatch) => {
     });
   }
 };
+const logout = () => async(dispatch) => {
+  localStorage.removeItem('userInfo')
+  dispatch({type:USER_LOGOUT})
+
+}
+
+export {login,logout}
